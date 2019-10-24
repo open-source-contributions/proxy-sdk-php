@@ -28,7 +28,7 @@ class ClientTest extends TestCase
         static::startAgent();
     }
 
-    public function setUp()
+    protected function setUp()
     {
         $logger = new Logger('SDK Tests');
         $logger->pushHandler(new ErrorLogHandler());
@@ -60,7 +60,7 @@ class ClientTest extends TestCase
 
     public function testFindRedirectWhenExistUsingUnixSocket()
     {
-        $agent = static::startAgent(['socket_type' => 'AF_UNIX']);
+        static::startAgent(['socket_type' => 'AF_UNIX']);
 
         $client = new Client($this->projectKey, ['host1' => 'unix://'.sys_get_temp_dir().'/fake_agent.sock']);
 

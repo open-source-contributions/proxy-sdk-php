@@ -32,6 +32,11 @@
             "RedirectionIO\\Client\\Sdk\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "RedirectionIO\\Client\\Sdk\\Tests\\": "Tests/"
+        }
+    },
     "config": {
         "sort-packages": true
     },
